@@ -17,6 +17,7 @@ public record CreateCustomerCommand(
         Kyc kyc,
         Address address,
         Contact contact,
+        String phoneNumber,
         CustomerSegmentId customerSegmentId
 ) {
 }

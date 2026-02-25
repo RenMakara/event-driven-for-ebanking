@@ -32,6 +32,7 @@ public class CustomerEntity {
 
     private String phoneNumber;
 
+    @Enumerated(EnumType.STRING)
     private CustomerGender gender;
 
     @OneToOne(mappedBy = "customer", cascade = CascadeType.ALL)

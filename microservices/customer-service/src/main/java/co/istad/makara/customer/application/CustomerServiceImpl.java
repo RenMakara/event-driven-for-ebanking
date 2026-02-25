@@ -5,7 +5,7 @@ import co.istad.makara.customer.application.dto.create.CreateCustomerRequest;
 import co.istad.makara.customer.application.dto.create.CreateCustomerResponse;
 import co.istad.makara.customer.application.dto.update.ChangePhoneNumberRequest;
 import co.istad.makara.customer.application.dto.update.ChangePhoneNumberResponse;
-import co.istad.makara.customer.application.mapper.CustomerMapper;
+import co.istad.makara.customer.application.mapper.CustomerApplicationMapper;
 import co.istad.makara.customer.domain.command.ChangePhoneNumberCommand;
 import co.istad.makara.customer.domain.command.CreateCustomerCommand;
 import lombok.RequiredArgsConstructor;
@@ -20,7 +20,7 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class CustomerServiceImpl implements CustomerService {
 
-    private final CustomerMapper customerMapper;
+    private final CustomerApplicationMapper customerMapper;
     private final CommandGateway commandGateway;
 
     @Override

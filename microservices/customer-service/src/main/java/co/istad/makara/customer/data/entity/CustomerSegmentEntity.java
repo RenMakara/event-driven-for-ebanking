@@ -19,6 +19,7 @@ public class CustomerSegmentEntity {
     @Id
     private UUID customerSegmentId;
 
+    @Enumerated(EnumType.STRING)
     private CustomerSegmentType customerSegmentType;
 
     @OneToMany(mappedBy = "customerSegment", cascade = CascadeType.ALL)

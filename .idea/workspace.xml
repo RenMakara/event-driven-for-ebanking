@@ -4,16 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="57d9cd75-d56e-4c50-96fa-2c994cb9b129" name="Changes" comment="Implement CQRS and EventSourcing in CustomerService">
-      <change afterPath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/application/listener/CustomerListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/data/entity/AddressEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/data/entity/ContactEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/data/entity/CustomerEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/data/entity/CustomerSegmentEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/data/entity/KycEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/data/repository/CustomerRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/data/repository/CustomerSegmentRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/domain/valueobject/CustomerSegmentType.java" afterDir="false" />
+    <list default="true" id="57d9cd75-d56e-4c50-96fa-2c994cb9b129" name="Changes" comment="Implement read database">
+      <change afterPath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/rest/CustomerQueryController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/9.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.2.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/9.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.2.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/9.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.2.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -21,18 +13,18 @@
       <change beforePath="$PROJECT_DIR$/.gradle/9.2.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.2.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/problems/problems-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/problems/problems-report.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/customer-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/customer-service/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/application/dto/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/application/CustomerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/application/dto/CustomerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/application/CustomerServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/application/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/application/CustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/application/CustomerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/application/CustomerServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/application/dto/create/CreateCustomerRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/application/dto/create/CreateCustomerRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/application/mapper/CustomerMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/application/mapper/CustomerMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/application/listener/CustomerListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/application/listener/CustomerListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/application/mapper/CustomerMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/application/mapper/CustomerApplicationMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/data/entity/CustomerEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/data/entity/CustomerEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/data/entity/CustomerSegmentEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/data/entity/CustomerSegmentEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/domain/aggregate/CustomerAggregate.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/domain/aggregate/CustomerAggregate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/domain/command/CreateCustomerCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/domain/command/CreateCustomerCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/domain/event/CustomerCreatedEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/domain/event/CustomerCreatedEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/rest/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/rest/CustomerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/customer-service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/customer-service/src/main/resources/application.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,8 +83,8 @@
       <list>
         <option value="Enum" />
         <option value="Record" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -125,48 +117,48 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.Build Itp-eBanking.executor": "Run",
-    "Gradle.Download Sources.executor": "Run",
-    "Gradle.Itp-eBanking:spring-cloud [build].executor": "Run",
-    "Gradle.itp-ebanking [build].executor": "Run",
-    "Gradle.itp-ebanking [clean].executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "Spring Boot.CustomerServiceApplication.executor": "Run",
-    "Spring Boot.EurekaserverApplication.executor": "Run",
-    "Spring Boot.IamServiceApplication.executor": "Run",
-    "Spring Boot.ItpConfigserverApplication.executor": "Run",
-    "full.screen.before.presentation.mode": "false",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/ITP-CSTAD/Itp-eBanking/microservices/customer-service/src/main/java/co/istad/makara/customer/data/entity",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "run.configurations.included.in.services": "true",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.Build Itp-eBanking.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Download Sources.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Itp-eBanking:spring-cloud [build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.itp-ebanking [build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.itp-ebanking [clean].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;Spring Boot.CustomerServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.EurekaserverApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.IamServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ItpConfigserverApplication.executor&quot;: &quot;Run&quot;,
+    &quot;full.screen.before.presentation.mode&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/ITP-CSTAD/Itp-eBanking/microservices/customer-service/src/main/java/co/istad/makara/customer/data/entity&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\ITP-CSTAD\Itp-eBanking\microservices\customer-service\src\main\java\co\istad\makara\customer\data\entity" />
@@ -363,7 +355,8 @@
       <workItem from="1771813957140" duration="5869000" />
       <workItem from="1771881122471" duration="3769000" />
       <workItem from="1771922058763" duration="5462000" />
-      <workItem from="1771949170930" duration="15102000" />
+      <workItem from="1771949170930" duration="16007000" />
+      <workItem from="1771981774730" duration="11715000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <option name="closed" value="true" />
@@ -381,7 +374,15 @@
       <option name="project" value="LOCAL" />
       <updated>1771955200876</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Implement read database">
+      <option name="closed" value="true" />
+      <created>1771964645166</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1771964645166</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -390,7 +391,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="." />
     <MESSAGE value="Implement CQRS and EventSourcing in CustomerService" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implement CQRS and EventSourcing in CustomerService" />
+    <MESSAGE value="Implement read database" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implement read database" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

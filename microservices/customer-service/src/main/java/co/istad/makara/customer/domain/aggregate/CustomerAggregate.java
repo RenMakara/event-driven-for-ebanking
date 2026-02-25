@@ -36,9 +36,9 @@ public class CustomerAggregate {
     private CustomerGender gender;
     private LocalDate dob;
     private Kyc kyc;
-    private String phoneNumber;
     private Address address;
     private Contact contact;
+    private String phoneNumber;
     private CustomerSegmentId customerSegmentId;
 
     List<String> failureMessages;
@@ -62,6 +62,7 @@ public class CustomerAggregate {
                         .kyc(createCustomerCommand.kyc())
                         .address(createCustomerCommand.address())
                         .contact(createCustomerCommand.contact())
+                        .phoneNumber(createCustomerCommand.phoneNumber())
                         .customerSegmentId(createCustomerCommand.customerSegmentId())
                         .build();
         AggregateLifecycle.apply(customerCreatedEvent);

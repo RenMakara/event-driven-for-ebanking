@@ -1,6 +1,6 @@
 package co.istad.makara.customer.application.listener;
 
-import co.istad.makara.customer.application.mapper.CustomerMapper;
+import co.istad.makara.customer.application.mapper.CustomerApplicationMapper;
 import co.istad.makara.customer.data.entity.CustomerEntity;
 import co.istad.makara.customer.data.entity.CustomerSegmentEntity;
 import co.istad.makara.customer.data.repository.CustomerRepository;
@@ -22,7 +22,7 @@ import org.springframework.web.server.ResponseStatusException;
 public class CustomerListener {
 
     private final CustomerRepository customerRepository;
-    private final CustomerMapper customerMapper;
+    private final CustomerApplicationMapper customerMapper;
     private final CustomerSegmentRepository customerSegmentRepository;
 
     @EventHandler
@@ -47,6 +47,20 @@ public class CustomerListener {
 
     @EventHandler
     public void on(CustomerPhoneNumberChangedEvent customerPhoneNumberChangedEvent){
-        log.info("on CustomerPhoneNumberChangedEvent : {}", customerPhoneNumberChangedEvent);
+        log.info("on CustomerPhoneNumberChangedEvent: {}", customerPhoneNumberChangedEvent);
+        // 1. Find existing customer
+        CustomerEntity customerEntity = customerRepository
+                .findById(customerPhoneNumberChangedEvent.customerId().value())
+                .orElseThrow(() ->
+                        new ResponseStatusException(
+                                HttpStatus.NOT_FOUND,
+                                "Customer not found"
+                        )
+                );
+        // 2. Update phone number
+        customerEntity.setPhoneNumber(customerPhoneNumberChangedEvent.phoneNumber());
+
+        // 3. Save (update)
+        customerRepository.save(customerEntity);
     }
 }

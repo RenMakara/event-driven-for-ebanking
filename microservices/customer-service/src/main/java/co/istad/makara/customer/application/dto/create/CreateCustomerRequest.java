@@ -22,7 +22,7 @@ public record CreateCustomerRequest(
         Address address,
         @NotNull
         Contact contact,
-        @NotBlank
+        @NotBlank @NotNull
         String phoneNumber,
         @NotNull
         CustomerSegmentId customerSegmentId
