@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="57d9cd75-d56e-4c50-96fa-2c994cb9b129" name="Changes" comment="Implement read database">
+    <list default="true" id="57d9cd75-d56e-4c50-96fa-2c994cb9b129" name="Changes" comment="integrate phone number update logic in `CustomerListener`">
+      <change afterPath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/application/CustomerQueryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/application/CustomerQueryServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/application/dto/query/CustomPageResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/application/dto/query/CustomerPageResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/application/dto/query/CustomerResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/application/dto/query/CustomerSegmentResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/application/dto/query/GetCustomerQuery.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/application/projection/CustomerQueryHandler.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/rest/CustomerQueryController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/9.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.2.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/9.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.2.1/executionHistory/executionHistory.lock" afterDir="false" />
@@ -12,19 +20,11 @@
       <change beforePath="$PROJECT_DIR$/.gradle/9.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.2.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/9.2.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.2.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/problems/problems-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/problems/problems-report.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/application/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/application/CustomerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/application/CustomerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/application/CustomerServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/application/dto/create/CreateCustomerRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/application/dto/create/CreateCustomerRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/application/listener/CustomerListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/application/listener/CustomerListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/application/mapper/CustomerMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/application/mapper/CustomerApplicationMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/data/entity/CustomerEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/data/entity/CustomerEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/data/entity/CustomerSegmentEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/data/entity/CustomerSegmentEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/domain/aggregate/CustomerAggregate.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/domain/aggregate/CustomerAggregate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/domain/command/CreateCustomerCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/domain/command/CreateCustomerCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/domain/event/CustomerCreatedEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/domain/event/CustomerCreatedEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/application/mapper/CustomerApplicationMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/application/mapper/CustomerApplicationMapper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +35,13 @@
     <persistenceIdMap>
       <entry key="_D:/ITP-CSTAD/Itp-eBanking" value="39rGPXpsOhI2tLGtHgCYQIbkt7h" />
     </persistenceIdMap>
+  </component>
+  <component name="CopilotUserSelectedModel">
+    <selectedModels>
+      <entry key="chat-panel" value="GPT-5 mini" />
+      <entry key="agent-panel" value="GPT-5 mini" />
+      <entry key="edit-panel" value="GPT-5 mini" />
+    </selectedModels>
   </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
@@ -59,6 +66,9 @@
         <task path="$PROJECT_DIR$/spring-cloud">
           <activation />
         </task>
+        <task path="$PROJECT_DIR$/microservices/customer-service">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
             <expand>
@@ -69,7 +79,7 @@
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="Itp-eBanking" type="f1a62948:ProjectNode" />
-                <item name="microservices" type="2d1252cf:ModuleNode" />
+                <item name="common" type="2d1252cf:ModuleNode" />
               </path>
             </expand>
             <select />
@@ -82,9 +92,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Record" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="Record" />
       </list>
     </option>
   </component>
@@ -357,6 +367,7 @@
       <workItem from="1771922058763" duration="5462000" />
       <workItem from="1771949170930" duration="16007000" />
       <workItem from="1771981774730" duration="11715000" />
+      <workItem from="1772033902152" duration="10792000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <option name="closed" value="true" />
@@ -382,7 +393,15 @@
       <option name="project" value="LOCAL" />
       <updated>1771964645166</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="integrate phone number update logic in `CustomerListener`">
+      <option name="closed" value="true" />
+      <created>1772034067431</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1772034067431</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -392,7 +411,8 @@
     <MESSAGE value="." />
     <MESSAGE value="Implement CQRS and EventSourcing in CustomerService" />
     <MESSAGE value="Implement read database" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implement read database" />
+    <MESSAGE value="integrate phone number update logic in `CustomerListener`" />
+    <option name="LAST_COMMIT_MESSAGE" value="integrate phone number update logic in `CustomerListener`" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>
