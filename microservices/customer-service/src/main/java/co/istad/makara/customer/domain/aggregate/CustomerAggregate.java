@@ -21,7 +21,7 @@ import org.axonframework.spring.stereotype.Aggregate;
 import java.time.LocalDate;
 import java.util.List;
 
-@Aggregate
+@Aggregate(snapshotTriggerDefinition = "customerSnapshotTriggerDefinition")
 @NoArgsConstructor
 @Getter // this has only getter
 @EqualsAndHashCode
@@ -69,7 +69,7 @@ public class CustomerAggregate {
     }
 
     @CommandHandler
-    public void handler(ChangePhoneNumberCommand changePhoneNumberCommand){
+    public void handler(ChangePhoneNumberCommand changePhoneNumberCommand) {
         log.info("Handle ChangePhoneNumberCommand: {}", changePhoneNumberCommand);
 
         CustomerPhoneNumberChangedEvent customerPhoneNumberChangedEvent = CustomerPhoneNumberChangedEvent.builder()
@@ -80,7 +80,7 @@ public class CustomerAggregate {
     }
 
     @EventSourcingHandler // the last method in aggregate
-    public void on(CustomerCreatedEvent customerCreatedEvent){
+    public void on(CustomerCreatedEvent customerCreatedEvent) {
         this.customerId = customerCreatedEvent.customerId();
         this.name = customerCreatedEvent.name();
         this.email = customerCreatedEvent.email();
@@ -93,13 +93,12 @@ public class CustomerAggregate {
     }
 
     @EventSourcingHandler
-    public void on(CustomerPhoneNumberChangedEvent customerPhoneNumberChangedEvent){
+    public void on(CustomerPhoneNumberChangedEvent customerPhoneNumberChangedEvent) {
         this.customerId = customerPhoneNumberChangedEvent.customerId();
         this.phoneNumber = customerPhoneNumberChangedEvent.phoneNumber();
     }
 
 }
-
 
 
 //
