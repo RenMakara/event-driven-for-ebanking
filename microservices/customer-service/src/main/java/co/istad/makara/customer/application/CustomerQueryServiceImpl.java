@@ -1,6 +1,8 @@
 package co.istad.makara.customer.application;
 import co.istad.makara.customer.application.dto.query.CustomerPageResponse;
-import co.istad.makara.customer.application.dto.query.GetCustomerQuery;
+import co.istad.makara.customer.application.dto.query.CustomerResponse;
+import co.istad.makara.customer.application.projection.GetCustomerByIdQuery;
+import co.istad.makara.customer.application.projection.GetCustomerQuery;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.axonframework.eventsourcing.eventstore.EventStore;
@@ -35,6 +37,13 @@ public class CustomerQueryServiceImpl implements CustomerQueryService{
                 .asStream()
                 .map(Message::getPayload)
                 .toList();
+
+    }
+
+    @Override
+    public CustomerResponse getCustomerById(UUID customerId) {
+        GetCustomerByIdQuery getCustomerByIdQuery = new GetCustomerByIdQuery(customerId);
+        return queryGateway.query(getCustomerByIdQuery, ResponseTypes.instanceOf(CustomerResponse.class)).join();
 
     }
 //    @Override

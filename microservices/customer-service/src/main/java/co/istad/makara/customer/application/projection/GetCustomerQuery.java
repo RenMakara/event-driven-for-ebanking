@@ -1,4 +1,4 @@
-package co.istad.makara.customer.application.dto.query;
+package co.istad.makara.customer.application.projection;
 
 import lombok.*;
 

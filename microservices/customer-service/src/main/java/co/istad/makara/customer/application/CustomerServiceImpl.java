@@ -55,7 +55,7 @@ public class CustomerServiceImpl implements CustomerService {
         log.info("CommandGateway Result: {}", result);
 
         return CreateCustomerResponse.builder()
-                .customerId(createCustomerCommand.customerId().getValue())
+                .customerId(createCustomerCommand.customerId().value())
                 .message("Customer saved successfully")
                 .build();
     }

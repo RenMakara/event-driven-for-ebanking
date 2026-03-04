@@ -2,7 +2,6 @@ package co.istad.makara.customer.application.projection;
 
 import co.istad.makara.customer.application.dto.query.CustomerPageResponse;
 import co.istad.makara.customer.application.dto.query.CustomerResponse;
-import co.istad.makara.customer.application.dto.query.GetCustomerQuery;
 import co.istad.makara.customer.application.mapper.CustomerApplicationMapper;
 import co.istad.makara.customer.data.entity.CustomerEntity;
 import co.istad.makara.customer.data.repository.CustomerRepository;
@@ -15,6 +14,7 @@ import org.springframework.data.domain.*;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.UUID;
 
 @Component
 @RequiredArgsConstructor
@@ -52,6 +52,14 @@ public class CustomerQueryHandler {
                 .next(customerPage.hasNext())
                 .previous(customerPage.hasPrevious())
                 .build();
+    }
+
+    @QueryHandler
+    public CustomerResponse handle(GetCustomerByIdQuery query) {
+        UUID id = query.customerId();
+        CustomerEntity entity = customerRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Customer not found: " + id));
+        return mapper.toCustomerResponse(entity);
     }
 
 

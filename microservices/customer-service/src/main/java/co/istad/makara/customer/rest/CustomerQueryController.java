@@ -37,6 +37,11 @@ public class CustomerQueryController {
     ){
         return customerQueryService.getAllCustomers(pageNumber, pageSize);
     }
+
+    @GetMapping("/{customerId}")
+    public CustomerResponse getCustomerById(@PathVariable("customerId") UUID customerId){
+        return customerQueryService.getCustomerById(customerId);
+    }
 }
 
 /** Flow

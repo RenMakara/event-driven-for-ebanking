@@ -13,7 +13,6 @@ import org.axonframework.config.ProcessingGroup;
 import org.axonframework.eventhandling.EventHandler;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.server.ResponseStatusException;
 
 @Component
@@ -52,7 +51,7 @@ public class CustomerListener {
         log.info("on CustomerPhoneNumberChangedEvent: {}", customerPhoneNumberChangedEvent);
         // 1. Find existing customer
         CustomerEntity customerEntity = customerRepository
-                .findById(customerPhoneNumberChangedEvent.customerId().getValue())
+                .findById(customerPhoneNumberChangedEvent.customerId().value())
                 .orElseThrow(() ->
                         new ResponseStatusException(
                                 HttpStatus.NOT_FOUND,
