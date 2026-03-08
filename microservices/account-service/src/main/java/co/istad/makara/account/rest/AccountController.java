@@ -34,8 +34,18 @@ public class AccountController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/withdrawal")
-    public CreateWithdrawalReponse createWithdrawalReponse(@RequestBody CreateWithdrawalRequest request){
-        return null;
+    public CreateWithdrawalResponse createWithdrawalReponse(@RequestBody CreateWithdrawalRequest request){
+        CreateWithdrawalResponse response = accountService.withdrawalAmount(request);
+        log.info("Withdrawal amount : {}", response.amount());
+        return response;
+    }
+
+    @ResponseStatus(HttpStatus.CREATED)
+    @PostMapping("/frozen")
+    public CreateFrozenResponse createFrozenResponse(@RequestBody CreateFrozenRequest frozenRequest){
+        log.info("Frozen request : {}", frozenRequest);
+
+        return accountService.freezeAccount(frozenRequest);
     }
 
 

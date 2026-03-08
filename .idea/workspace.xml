@@ -4,27 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="57d9cd75-d56e-4c50-96fa-2c994cb9b129" name="Changes" comment="Implement account service">
-      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/application/dto/create/CreateWithdrawalReponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/application/dto/create/CreateWithdrawalRequest.java" afterDir="false" />
+    <list default="true" id="57d9cd75-d56e-4c50-96fa-2c994cb9b129" name="Changes" comment="Deposit amount Implemented">
+      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/application/dto/create/CreateFrozenRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/application/dto/create/CreateFrozenResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/9.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.2.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/9.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.2.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/9.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.2.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/9.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.2.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/9.2.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.2.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/co/istad/makara/common/domain/valueobject/Money.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/co/istad/makara/common/domain/valueobject/Money.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/problems/problems-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/problems/problems-report.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/application/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/application/AccountService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/application/AccountServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/application/AccountServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/application/dto/create/CreateDepositRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/application/dto/create/CreateDepositRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/application/dto/create/CreateDepositResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/application/dto/create/CreateDepositResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/application/dto/create/CreateWithdrawalReponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/application/dto/create/CreateWithdrawalResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/application/dto/create/CreateWithdrawalRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/application/dto/create/CreateWithdrawalRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/application/mapper/AccountMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/application/mapper/AccountMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/config/AxonConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/config/AxonConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/domain/aggregate/AccountAggregate.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/domain/aggregate/AccountAggregate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/domain/handler/interceptors/AccountListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/domain/handler/interceptors/AccountListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/domain/command/FreezeAccountCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/domain/command/FreezeAccountCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/domain/command/WithdrawMoneyCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/domain/command/WithdrawMoneyCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/rest/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/rest/AccountController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/account-service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/account-service/src/main/resources/application.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -206,8 +205,8 @@
       <list>
         <option value="Enum" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="Exception" />
+        <option value="Class" />
         <option value="Record" />
       </list>
     </option>
@@ -294,6 +293,9 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="co.istad.makara.account.rest" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\ITP-CSTAD\Itp-eBanking\microservices\customer-service\src\main\java\co\istad\makara\customer\application\config" />
       <recent name="D:\ITP-CSTAD\Itp-eBanking\microservices\customer-service\src\main\java\co\istad\makara\customer\data\entity" />
@@ -335,28 +337,6 @@
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/microservices" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="build" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="Itp-eBanking:microservices:pipeline-service [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/microservices/pipeline-service" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="scriptParameters" />
         <option name="taskDescriptions">
@@ -441,10 +421,16 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="AccountServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+    <configuration name="AccountServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="Itp-eBanking.microservices.account-service.main" />
       <option name="SHORTEN_COMMAND_LINE" value="ARGS_FILE" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="co.istad.makara.account.AccountServiceApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="co.istad.makara.account.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -513,11 +499,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.AccountServiceApplication" />
         <item itemvalue="Gradle.Itp-eBanking:spring-cloud:admin-bff [build]" />
         <item itemvalue="Gradle.Itp-eBanking:spring-cloud:front-bff [build]" />
         <item itemvalue="Gradle.Itp-eBanking:spring-cloud:gateway-server [build]" />
         <item itemvalue="Gradle.Itp-eBanking:microservices [build]" />
-        <item itemvalue="Gradle.Itp-eBanking:microservices:pipeline-service [build]" />
       </list>
     </recent_temporary>
   </component>
@@ -564,7 +550,7 @@
       <workItem from="1772759649396" duration="7802000" />
       <workItem from="1772769462799" duration="1465000" />
       <workItem from="1772948502723" duration="3685000" />
-      <workItem from="1772952251271" duration="4092000" />
+      <workItem from="1772952251271" duration="10493000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <option name="closed" value="true" />
@@ -662,7 +648,15 @@
       <option name="project" value="LOCAL" />
       <updated>1772948777251</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Deposit amount Implemented">
+      <option name="closed" value="true" />
+      <created>1772956657124</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1772956657124</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -679,7 +673,8 @@
     <MESSAGE value="Add dead letter queue processing and configuration for customer events" />
     <MESSAGE value="Expose endpoint to account service for validate customer" />
     <MESSAGE value="Implement account service" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implement account service" />
+    <MESSAGE value="Deposit amount Implemented" />
+    <option name="LAST_COMMIT_MESSAGE" value="Deposit amount Implemented" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

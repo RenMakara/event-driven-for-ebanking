@@ -8,9 +8,9 @@ import org.axonframework.modelling.command.TargetAggregateIdentifier;
 public record WithdrawMoneyCommand(
         @TargetAggregateIdentifier
         AccountId accountId,
-                TransactionId transactionId,
-                Money amount,
-                String remark
+        TransactionId transactionId,
+        Money amount,
+        String remark
 ) {
 
 }

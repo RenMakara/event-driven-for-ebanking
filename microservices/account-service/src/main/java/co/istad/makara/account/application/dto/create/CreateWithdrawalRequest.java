@@ -1,4 +1,13 @@
 package co.istad.makara.account.application.dto.create;
 
-public record CreateWithdrawalRequest() {
+import co.istad.makara.common.domain.valueobject.AccountId;
+import co.istad.makara.common.domain.valueobject.Money;
+import co.istad.makara.common.domain.valueobject.TransactionId;
+
+public record CreateWithdrawalRequest(
+        AccountId accountId,
+        TransactionId transactionId,
+        Money amount,
+        String remark
+) {
 }

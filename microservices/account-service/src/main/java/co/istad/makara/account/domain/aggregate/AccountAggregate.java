@@ -2,9 +2,12 @@ package co.istad.makara.account.domain.aggregate;
 
 import co.istad.makara.account.domain.command.CreateAccountCommand;
 import co.istad.makara.account.domain.command.DepositMoneyCommand;
+import co.istad.makara.account.domain.command.FreezeAccountCommand;
 import co.istad.makara.account.domain.command.WithdrawMoneyCommand;
 import co.istad.makara.account.domain.event.AccountCreatedEvent;
+import co.istad.makara.account.domain.event.AccountFrozenEvent;
 import co.istad.makara.account.domain.event.MoneyDepositedEvent;
+import co.istad.makara.account.domain.event.MoneyWithdrawnEvent;
 import co.istad.makara.account.domain.exception.AccountDomainException;
 import co.istad.makara.account.domain.validate.AccountValidation;
 import co.istad.makara.account.domain.valueobject.AccountStatus;
@@ -76,6 +79,15 @@ public class AccountAggregate {
         }
     }
 
+    private void validateAccountIsFreeze(){
+        if (this.accountStatus == AccountStatus.CLOSED) {
+            throw new AccountDomainException("Only ACTIVE accounts can be frozen. Current status: " + this.accountStatus);
+        }
+        if (this.accountStatus == AccountStatus.FREEZE){
+            throw new AccountDomainException("Can not freeze this account! Account is freeze");
+        }
+    }
+
     private void validateDepositAmount(Money amount) {
 
         if (amount == null) {
@@ -88,7 +100,21 @@ public class AccountAggregate {
         }
     }
 
-
+    private void validateWithdrawalAmount(Money amount){
+        if (amount == null) {
+            throw new AccountDomainException("Withdrawal amount cannot be null");
+        }
+        Money zero = new Money(BigDecimal.ZERO, Currency.USD);
+        if (amount.isLessThanOrEqual(zero)) {
+            throw new AccountDomainException("Withdrawal amount must be greater than Zero");
+        }
+        if (this.balance == null){
+            throw new AccountDomainException("Account balance is not initialized");
+        }
+        if (this.balance.isLessThan(amount)){
+            throw new AccountDomainException("Insufficient balance!");
+        }
+    }
 
     // Constructor CommandHandler required for first event
     @CommandHandler
@@ -120,7 +146,6 @@ public class AccountAggregate {
         // Save Event to Event Store
         AggregateLifecycle.apply(event);
     }
-
     @EventSourcingHandler
     public void on(AccountCreatedEvent event){
         this.accountId = event.accountId();
@@ -159,7 +184,6 @@ public class AccountAggregate {
                 )
         );
     }
-
     @EventSourcingHandler
     public void on(MoneyDepositedEvent event) {
 
@@ -173,7 +197,55 @@ public class AccountAggregate {
 
     @CommandHandler
     public void handle(WithdrawMoneyCommand command){
+        log.info("Handling WithdrawMoneyCommand for accountId = {}", command.accountId().value());
 
+        validateAccountIsActive();
+        validateWithdrawalAmount(command.amount());
+        Money newBalance = this.balance.subtract(command.amount());
+        AggregateLifecycle.apply(new MoneyWithdrawnEvent(
+                this.accountId,
+                this.customerId,
+                command.transactionId(),
+                command.amount(),
+                newBalance,
+                command.remark(),
+                ZonedDateTime.now()
+        ));
+    }
+    @EventSourcingHandler
+    public void on(MoneyWithdrawnEvent event){
+        // State change based on event
+        this.balance = event.newBalance();
+        log.info("MoneyWithdrawnEvent applied: accountId={}, newBalance={}",
+                event.accountId().value(),
+                this.balance
+        );
+    }
+
+    @CommandHandler
+    public void handle(FreezeAccountCommand command){
+        log.info("Handling FreezeAccountCommand for accountId = {}", command.accountId().value());
+        validateAccountIsFreeze();
+        AggregateLifecycle.apply(new AccountFrozenEvent(
+                this.accountId,
+                this.customerId,
+                this.accountStatus,
+                AccountStatus.FREEZE,
+                command.remark(),
+                command.requestedBy(),
+                ZonedDateTime.now()
+        ));
+    }
+    @EventSourcingHandler
+    public void on(AccountFrozenEvent event){
+        this.accountStatus = event.newStatus();
+        this.updatedAt = event.createdAt();
+        this.updatedBy = event.requestedBy();
+        log.info("AccountFrozenEvent applied: accountId={}, status={} -> {}",
+                event.accountId().value(),
+                event.previousStatus(),
+                event.newStatus()
+        );
     }
 
 }
