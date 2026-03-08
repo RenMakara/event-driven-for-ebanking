@@ -34,6 +34,20 @@ public record Money(
             throw new DomainException("Currency doesn't match");
         }
     }
+    public Money add(Money otherAmount) {
+        if (this.currency != otherAmount.currency) {
+            throw new DomainException("Currency mismatch");
+        }
+        return new Money(this.amount.add(otherAmount.amount), this.currency);
+    }
+    public Money subtract(Money otherAmount) {
+        if (this.currency != otherAmount.currency) {
+            throw new DomainException("Currency mismatch");
+        }
+        return new Money(this.amount.subtract(otherAmount.amount), this.currency);
+    }
+
+
 
 
 

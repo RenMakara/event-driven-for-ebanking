@@ -1,10 +1,11 @@
 package co.istad.makara.account.application.dto.create;
 
+import co.istad.makara.common.domain.valueobject.Money;
 import lombok.Builder;
 
 @Builder
 public record CreateDepositResponse(
-        String amount,
+        Money amount,
         String remark
 ) {
 }

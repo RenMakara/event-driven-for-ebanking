@@ -2,6 +2,7 @@ package co.istad.makara.account.domain.aggregate;
 
 import co.istad.makara.account.domain.command.CreateAccountCommand;
 import co.istad.makara.account.domain.command.DepositMoneyCommand;
+import co.istad.makara.account.domain.command.WithdrawMoneyCommand;
 import co.istad.makara.account.domain.event.AccountCreatedEvent;
 import co.istad.makara.account.domain.event.MoneyDepositedEvent;
 import co.istad.makara.account.domain.exception.AccountDomainException;
@@ -9,6 +10,7 @@ import co.istad.makara.account.domain.validate.AccountValidation;
 import co.istad.makara.account.domain.valueobject.AccountStatus;
 import co.istad.makara.account.domain.valueobject.AccountTypeCode;
 import co.istad.makara.common.application.exception.ApplicationException;
+import co.istad.makara.common.domain.exception.DomainException;
 import co.istad.makara.common.domain.valueobject.*;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -68,6 +70,24 @@ public class AccountAggregate {
 
     }
 
+    private void validateAccountIsActive() {
+        if (this.accountStatus != AccountStatus.ACTIVE) {
+            throw new AccountDomainException("Deposit is not allowed. Account status: " + this.accountStatus);
+        }
+    }
+
+    private void validateDepositAmount(Money amount) {
+
+        if (amount == null) {
+            throw new AccountDomainException("Deposit amount cannot be null");
+        }
+
+        Money zero = new Money(BigDecimal.ZERO, Currency.USD);
+        if (amount.isLessThanOrEqual(zero)) {
+            throw new AccountDomainException("Deposit amount must be greater than zero");
+        }
+    }
+
 
 
     // Constructor CommandHandler required for first event
@@ -112,32 +132,48 @@ public class AccountAggregate {
         this.balance = event.initialBalance();
         this.accountStatus = event.accountStatus();
         this.createdAt = event.createdAt();
+        this.createdBy = event.createdBy();
 
         log.info("Account Created Event applied: {}", event.accountId());
     }
 
     @CommandHandler
-    public void deposit(DepositMoneyCommand command) {
-        log.info("Aggregate on Deposit Money Command : {}", command.accountId());
+    public void handle(DepositMoneyCommand command) {
 
-        MoneyDepositedEvent event = MoneyDepositedEvent.builder()
-                .accountId(command.accountId())
-                .transactionId(command.transactionId())
-                .amount(command.amount())
-                .remark(command.remark())
-                .createdAt(ZonedDateTime.now())
-                .build();
+        log.info("Handling DepositMoneyCommand for accountId = {}", command.accountId().value());
 
-        AggregateLifecycle.apply(event);
+        validateAccountIsActive();
+        validateDepositAmount(command.amount());
+
+        Money newBalance = this.balance.add(command.amount());
+
+        AggregateLifecycle.apply(
+                new MoneyDepositedEvent(
+                        this.accountId,
+                        this.customerId,
+                        command.transactionId(),
+                        command.amount(),
+                        newBalance,
+                        command.remark(),
+                        ZonedDateTime.now()
+                )
+        );
     }
 
     @EventSourcingHandler
-    public void on(MoneyDepositedEvent event){
-        this.balance=event.amount();
-        log.info("Money Deposited Event applied: {}", event.accountId());
+    public void on(MoneyDepositedEvent event) {
+
+        this.balance = event.newBalance();
+
+        log.info("MoneyDepositedEvent applied: accountId={}, newBalance={}",
+                event.accountId().value(),
+                this.balance
+        );
     }
 
+    @CommandHandler
+    public void handle(WithdrawMoneyCommand command){
 
-
+    }
 
 }

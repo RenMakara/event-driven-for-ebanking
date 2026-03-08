@@ -4,55 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="57d9cd75-d56e-4c50-96fa-2c994cb9b129" name="Changes" comment="Expose endpoint to account service for validate customer">
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/co/istad/makara/common/application/exception/ApplicationException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/co/istad/makara/common/application/exception/ErrorResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/co/istad/makara/common/domain/exception/DomainException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/co/istad/makara/common/domain/valueobject/AccountTypeId.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/co/istad/makara/common/domain/valueobject/BranchId.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/co/istad/makara/common/domain/valueobject/Currency.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/co/istad/makara/common/domain/valueobject/Money.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/co/istad/makara/common/domain/valueobject/TransactionId.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/co/istad/makara/common/dto/PageResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/application/AccountService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/application/AccountServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/application/dto/create/CreateAccountRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/application/dto/create/CreateAccountResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/application/dto/create/CreateDepositRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/application/dto/create/CreateDepositResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/application/mapper/AccountMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/config/AxonConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/config/WebClientConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/config/external/CustomerClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/data/entity/AccountEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/data/entity/AccountTypeEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/data/entity/BranchEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/data/entity/CustomerEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/data/init/InitAccountType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/data/init/InitBranch.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/data/repository/AccountEntityRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/data/repository/AccountTypeRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/data/repository/BranchRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/data/repository/CustomerRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/domain/aggregate/AccountAggregate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/domain/command/CreateAccountCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/domain/command/DepositMoneyCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/domain/command/FreezeAccountCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/domain/command/WithdrawMoneyCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/domain/event/AccountCreatedEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/domain/event/AccountFrozenEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/domain/event/MoneyDepositedEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/domain/event/MoneyWithdrawnEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/domain/exception/AccountDomainException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/domain/handler/MyCommandDispatchInterceptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/domain/handler/interceptors/AccountCreationDispatchInterceptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/domain/handler/interceptors/AccountListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/domain/validate/AccountValidation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/domain/valueobject/AccountStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/domain/valueobject/AccountTypeCode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/rest/AccountController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/rest/exception/AccountException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/9.2.1/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.2.1/checksums/checksums.lock" afterDir="false" />
+    <list default="true" id="57d9cd75-d56e-4c50-96fa-2c994cb9b129" name="Changes" comment="Implement account service">
+      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/application/dto/create/CreateWithdrawalReponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/application/dto/create/CreateWithdrawalRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/9.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.2.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/9.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.2.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/9.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.2.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -60,32 +14,17 @@
       <change beforePath="$PROJECT_DIR$/.gradle/9.2.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.2.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/microservices/account-service/itp-ebanking.microservices.account-service.main.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/microservices/pipeline-service/itp-ebanking.microservices.pipeline-service.main.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/problems/problems-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/problems/problems-report.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/co/istad/makara/common/domain/valueobject/AccountId.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/co/istad/makara/common/domain/valueobject/AccountId.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/co/istad/makara/common/domain/valueobject/CustomerId.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/co/istad/makara/common/domain/valueobject/CustomerId.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/account-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/account-service/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/rest/dto/CustomerResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/application/dto/create/CustomerResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account_service/AccountController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account_service/AccountServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/AccountServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account_service/UnsecureController.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/UnsecureController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account_service/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/security/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/co/istad/makara/common/domain/valueobject/Money.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/co/istad/makara/common/domain/valueobject/Money.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/application/AccountServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/application/AccountServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/application/dto/create/CreateDepositRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/application/dto/create/CreateDepositRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/application/dto/create/CreateDepositResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/application/dto/create/CreateDepositResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/application/mapper/AccountMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/application/mapper/AccountMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/config/AxonConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/config/AxonConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/domain/aggregate/AccountAggregate.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/domain/aggregate/AccountAggregate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/domain/handler/interceptors/AccountListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/domain/handler/interceptors/AccountListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/rest/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/rest/AccountController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/microservices/account-service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/account-service/src/main/resources/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/account-service/src/test/java/co/istad/makara/account_service/AccountServiceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/account-service/src/test/java/co/istad/makara/account/AccountServiceApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/CustomerServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/CustomerServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/application/mapper/CustomerApplicationMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/application/mapper/CustomerApplicationMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/rest/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/rest/CustomerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/customer-service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/customer-service/src/main/resources/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/pipeline-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/pipeline-service/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/pipeline-service/src/main/java/co/istad/makara/pipeline/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/pipeline-service/src/main/java/co/istad/makara/pipeline/security/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-cloud/gateway-server/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-cloud/gateway-server/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-cloud/itp-configserver/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-cloud/itp-configserver/gradlew.bat" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -345,7 +284,7 @@
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;terminal&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -624,6 +563,8 @@
       <workItem from="1772726587550" duration="10694000" />
       <workItem from="1772759649396" duration="7802000" />
       <workItem from="1772769462799" duration="1465000" />
+      <workItem from="1772948502723" duration="3685000" />
+      <workItem from="1772952251271" duration="4092000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <option name="closed" value="true" />
@@ -713,7 +654,15 @@
       <option name="project" value="LOCAL" />
       <updated>1772590828301</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Implement account service">
+      <option name="closed" value="true" />
+      <created>1772948777251</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1772948777251</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -729,7 +678,8 @@
     <MESSAGE value="." />
     <MESSAGE value="Add dead letter queue processing and configuration for customer events" />
     <MESSAGE value="Expose endpoint to account service for validate customer" />
-    <option name="LAST_COMMIT_MESSAGE" value="Expose endpoint to account service for validate customer" />
+    <MESSAGE value="Implement account service" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implement account service" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
