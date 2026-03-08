@@ -34,7 +34,7 @@ ext {
 
 dependencies {
     // Axon framework
-    implementation 'org.axonframework:axon-spring-boot-starter'
+    implementation 'org.axonframework:axon-spring-boot-starter:4.13.0'
     // Core Avro library for serialization and deserialization
     implementation 'org.apache.avro:avro:1.12.1'
     // Confluent's Avro serializer for Kafka

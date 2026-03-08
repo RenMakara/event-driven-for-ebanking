@@ -19,5 +19,10 @@ public interface CustomerApplicationMapper {
             (CustomerId customerId, CreateCustomerRequest createCustomerRequest);
 
     @Mapping(source = "customerId.value", target = "customerId")
+    @Mapping(target = "customerSegment", ignore = true)
+    @Mapping(target = "failureMessages", ignore = true)
+    @Mapping(target = "kyc.customer", ignore = true)
+    @Mapping(target = "address.customer", ignore = true)
+    @Mapping(target = "contact.customer", ignore = true)
     CustomerEntity customerCreatedEventToCustomerEntity(CustomerCreatedEvent customerCreatedEvent);
 }

@@ -4,12 +4,55 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="57d9cd75-d56e-4c50-96fa-2c994cb9b129" name="Changes" comment="Implement CQRS read-side for CustomerService with pagination">
-      <change afterPath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/application/config/AxonConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/data/init/CustomerSegmentInit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.14/fileChanges/last-build.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.14/fileHashes/fileHashes.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.14/gc.properties" beforeDir="false" />
+    <list default="true" id="57d9cd75-d56e-4c50-96fa-2c994cb9b129" name="Changes" comment="Expose endpoint to account service for validate customer">
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/co/istad/makara/common/application/exception/ApplicationException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/co/istad/makara/common/application/exception/ErrorResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/co/istad/makara/common/domain/exception/DomainException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/co/istad/makara/common/domain/valueobject/AccountTypeId.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/co/istad/makara/common/domain/valueobject/BranchId.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/co/istad/makara/common/domain/valueobject/Currency.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/co/istad/makara/common/domain/valueobject/Money.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/co/istad/makara/common/domain/valueobject/TransactionId.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/co/istad/makara/common/dto/PageResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/application/AccountService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/application/AccountServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/application/dto/create/CreateAccountRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/application/dto/create/CreateAccountResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/application/dto/create/CreateDepositRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/application/dto/create/CreateDepositResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/application/mapper/AccountMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/config/AxonConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/config/WebClientConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/config/external/CustomerClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/data/entity/AccountEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/data/entity/AccountTypeEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/data/entity/BranchEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/data/entity/CustomerEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/data/init/InitAccountType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/data/init/InitBranch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/data/repository/AccountEntityRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/data/repository/AccountTypeRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/data/repository/BranchRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/data/repository/CustomerRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/domain/aggregate/AccountAggregate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/domain/command/CreateAccountCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/domain/command/DepositMoneyCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/domain/command/FreezeAccountCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/domain/command/WithdrawMoneyCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/domain/event/AccountCreatedEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/domain/event/AccountFrozenEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/domain/event/MoneyDepositedEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/domain/event/MoneyWithdrawnEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/domain/exception/AccountDomainException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/domain/handler/MyCommandDispatchInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/domain/handler/interceptors/AccountCreationDispatchInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/domain/handler/interceptors/AccountListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/domain/validate/AccountValidation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/domain/valueobject/AccountStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/domain/valueobject/AccountTypeCode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/rest/AccountController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/rest/exception/AccountException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/9.2.1/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.2.1/checksums/checksums.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/9.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.2.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/9.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.2.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/9.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.2.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -17,22 +60,32 @@
       <change beforePath="$PROJECT_DIR$/.gradle/9.2.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.2.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/microservices/account-service/itp-ebanking.microservices.account-service.main.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/microservices/pipeline-service/itp-ebanking.microservices.pipeline-service.main.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/problems/problems-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/problems/problems-report.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/co/istad/makara/common/domain/valueobject/AccountId.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/co/istad/makara/common/domain/valueobject/AccountId.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/src/main/java/co/istad/makara/common/domain/valueobject/CustomerId.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/co/istad/makara/common/domain/valueobject/CustomerId.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/application/CustomerQueryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/application/CustomerQueryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/application/CustomerQueryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/application/CustomerQueryServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/application/CustomerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/application/CustomerServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/application/dto/query/CustomerPageResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/application/dto/query/CustomerPageResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/application/dto/query/GetCustomerQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/application/dto/query/GetCustomerQuery.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/application/listener/CustomerListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/application/listener/CustomerListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/application/projection/CustomerQueryHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/application/projection/CustomerQueryHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/data/entity/AddressEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/data/entity/AddressEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/data/entity/ContactEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/data/entity/ContactEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/data/entity/KycEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/data/entity/KycEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/domain/aggregate/CustomerAggregate.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/domain/aggregate/CustomerAggregate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/domain/event/CustomerCreatedEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/domain/event/CustomerCreatedEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/rest/CustomerQueryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/rest/CustomerQueryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/account-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/account-service/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/rest/dto/CustomerResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/application/dto/create/CustomerResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account_service/AccountController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account_service/AccountServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/AccountServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account_service/UnsecureController.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/UnsecureController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account_service/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/security/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/account-service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/account-service/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/account-service/src/test/java/co/istad/makara/account_service/AccountServiceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/account-service/src/test/java/co/istad/makara/account/AccountServiceApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/CustomerServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/CustomerServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/application/mapper/CustomerApplicationMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/application/mapper/CustomerApplicationMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/rest/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/customer-service/src/main/java/co/istad/makara/customer/rest/CustomerController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/microservices/customer-service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/customer-service/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/pipeline-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/pipeline-service/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/pipeline-service/src/main/java/co/istad/makara/pipeline/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/pipeline-service/src/main/java/co/istad/makara/pipeline/security/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-cloud/gateway-server/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-cloud/gateway-server/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-cloud/itp-configserver/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-cloud/itp-configserver/gradlew.bat" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,8 +100,8 @@
   <component name="CopilotUserSelectedModel">
     <selectedModels>
       <entry key="edit-panel" value="GPT-5 mini" />
-      <entry key="chat-panel" value="GPT-5 mini" />
-      <entry key="agent-panel" value="GPT-5 mini" />
+      <entry key="chat-panel" value="Claude Opus 4.6" />
+      <entry key="agent-panel" value="Claude Opus 4.6" />
     </selectedModels>
   </component>
   <component name="ExternalProjectsData">
@@ -77,6 +130,24 @@
         <task path="$PROJECT_DIR$/microservices/customer-service">
           <activation />
         </task>
+        <task path="$PROJECT_DIR$/common">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/microservices/account-service">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/microservices/pipeline-service">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/spring-cloud/gateway-server">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/spring-cloud/front-bff">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/spring-cloud/admin-bff">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
             <expand>
@@ -87,7 +158,102 @@
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="Itp-eBanking" type="f1a62948:ProjectNode" />
-                <item name="common" type="2d1252cf:ModuleNode" />
+                <item name="microservices" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Itp-eBanking" type="f1a62948:ProjectNode" />
+                <item name="microservices" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Itp-eBanking" type="f1a62948:ProjectNode" />
+                <item name="microservices" type="2d1252cf:ModuleNode" />
+                <item name="pipeline-service" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Itp-eBanking" type="f1a62948:ProjectNode" />
+                <item name="microservices" type="2d1252cf:ModuleNode" />
+                <item name="pipeline-service" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Itp-eBanking" type="f1a62948:ProjectNode" />
+                <item name="microservices" type="2d1252cf:ModuleNode" />
+                <item name="pipeline-service" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Itp-eBanking" type="f1a62948:ProjectNode" />
+                <item name="spring-cloud" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Itp-eBanking" type="f1a62948:ProjectNode" />
+                <item name="spring-cloud" type="2d1252cf:ModuleNode" />
+                <item name="admin-bff" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Itp-eBanking" type="f1a62948:ProjectNode" />
+                <item name="spring-cloud" type="2d1252cf:ModuleNode" />
+                <item name="admin-bff" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Itp-eBanking" type="f1a62948:ProjectNode" />
+                <item name="spring-cloud" type="2d1252cf:ModuleNode" />
+                <item name="admin-bff" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Itp-eBanking" type="f1a62948:ProjectNode" />
+                <item name="spring-cloud" type="2d1252cf:ModuleNode" />
+                <item name="front-bff" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Itp-eBanking" type="f1a62948:ProjectNode" />
+                <item name="spring-cloud" type="2d1252cf:ModuleNode" />
+                <item name="front-bff" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Itp-eBanking" type="f1a62948:ProjectNode" />
+                <item name="spring-cloud" type="2d1252cf:ModuleNode" />
+                <item name="front-bff" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Itp-eBanking" type="f1a62948:ProjectNode" />
+                <item name="spring-cloud" type="2d1252cf:ModuleNode" />
+                <item name="gateway-server" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Itp-eBanking" type="f1a62948:ProjectNode" />
+                <item name="spring-cloud" type="2d1252cf:ModuleNode" />
+                <item name="gateway-server" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Itp-eBanking" type="f1a62948:ProjectNode" />
+                <item name="spring-cloud" type="2d1252cf:ModuleNode" />
+                <item name="gateway-server" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
               </path>
             </expand>
             <select />
@@ -101,8 +267,9 @@
       <list>
         <option value="Enum" />
         <option value="Interface" />
-        <option value="Record" />
         <option value="Class" />
+        <option value="Exception" />
+        <option value="Record" />
       </list>
     </option>
   </component>
@@ -129,6 +296,7 @@
   &quot;isMigrated&quot;: true
 }</component>
   <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;0800ffff&quot;,
   &quot;associatedIndex&quot;: 4
 }</component>
   <component name="ProjectId" id="39rGPXpsOhI2tLGtHgCYQIbkt7h" />
@@ -139,7 +307,15 @@
   &quot;keyToString&quot;: {
     &quot;Gradle.Build Itp-eBanking.executor&quot;: &quot;Run&quot;,
     &quot;Gradle.Download Sources.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Itp-eBanking:microservices [build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Itp-eBanking:microservices:account-service [buildDependents].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Itp-eBanking:microservices:account-service [build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Itp-eBanking:microservices:account-service [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Itp-eBanking:microservices:pipeline-service [build].executor&quot;: &quot;Run&quot;,
     &quot;Gradle.Itp-eBanking:spring-cloud [build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Itp-eBanking:spring-cloud:admin-bff [build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Itp-eBanking:spring-cloud:front-bff [build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Itp-eBanking:spring-cloud:gateway-server [build].executor&quot;: &quot;Run&quot;,
     &quot;Gradle.itp-ebanking [build].executor&quot;: &quot;Run&quot;,
     &quot;Gradle.itp-ebanking [clean].executor&quot;: &quot;Run&quot;,
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
@@ -150,6 +326,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;Spring Boot.AccountServiceApplication.executor&quot;: &quot;Run&quot;,
     &quot;Spring Boot.CustomerServiceApplication.executor&quot;: &quot;Run&quot;,
     &quot;Spring Boot.EurekaserverApplication.executor&quot;: &quot;Run&quot;,
     &quot;Spring Boot.IamServiceApplication.executor&quot;: &quot;Run&quot;,
@@ -158,17 +335,17 @@
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/ITP-CSTAD/Itp-eBanking&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/ITP-CSTAD/Itp-eBanking/microservices/customer-service/src/main/java/co/istad/makara/customer/application/config&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;terminal&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -179,11 +356,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\ITP-CSTAD\Itp-eBanking\microservices\customer-service\src\main\java\co\istad\makara\customer\application\config" />
       <recent name="D:\ITP-CSTAD\Itp-eBanking\microservices\customer-service\src\main\java\co\istad\makara\customer\data\entity" />
       <recent name="D:\ITP-CSTAD\Itp-eBanking\microservices\customer-service\src\main\java\co\istad\makara\customer\data" />
       <recent name="D:\ITP-CSTAD\Itp-eBanking\spring-cloud" />
       <recent name="D:\ItpProjects\itp-ebanking\microservices" />
-      <recent name="D:\ItpProjects\itp-ebanking" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="co.istad.makara.customer.application" />
@@ -203,6 +380,7 @@
         <entry key="SpringBootApplicationConfigurationType">
           <value>
             <map>
+              <entry key="AccountServiceApplication" value="STOPPED" />
               <entry key="CustomerServiceApplication" value="STOPPED" />
               <entry key="EurekaserverApplication" value="STOPPED" />
               <entry key="IamServiceApplication" value="STOPPED" />
@@ -213,11 +391,11 @@
       </map>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.CustomerServiceApplication">
-    <configuration name="Itp-eBanking:spring-cloud [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Spring Boot.AccountServiceApplication">
+    <configuration name="Itp-eBanking:microservices [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/spring-cloud" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/microservices" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="scriptParameters" />
         <option name="taskDescriptions">
@@ -236,10 +414,10 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="itp-ebanking [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="Itp-eBanking:microservices:pipeline-service [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/microservices/pipeline-service" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="scriptParameters" />
         <option name="taskDescriptions">
@@ -258,10 +436,10 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="itp-ebanking [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="Itp-eBanking:spring-cloud:admin-bff [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/spring-cloud/admin-bff" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="scriptParameters" />
         <option name="taskDescriptions">
@@ -269,7 +447,51 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="clean" />
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="Itp-eBanking:spring-cloud:front-bff [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/spring-cloud/front-bff" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="Itp-eBanking:spring-cloud:gateway-server [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/spring-cloud/gateway-server" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -282,7 +504,8 @@
     </configuration>
     <configuration name="AccountServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="Itp-eBanking.microservices.account-service.main" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="co.istad.makara.account_service.AccountServiceApplication" />
+      <option name="SHORTEN_COMMAND_LINE" value="ARGS_FILE" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="co.istad.makara.account.AccountServiceApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -343,11 +566,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <option name="SHORTEN_COMMAND_LINE" value="ARGS_FILE" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.Itp-eBanking:spring-cloud [build]" />
-        <item itemvalue="Gradle.itp-ebanking [build]" />
-        <item itemvalue="Gradle.itp-ebanking [clean]" />
+        <item itemvalue="Gradle.Itp-eBanking:spring-cloud:admin-bff [build]" />
+        <item itemvalue="Gradle.Itp-eBanking:spring-cloud:front-bff [build]" />
+        <item itemvalue="Gradle.Itp-eBanking:spring-cloud:gateway-server [build]" />
+        <item itemvalue="Gradle.Itp-eBanking:microservices [build]" />
+        <item itemvalue="Gradle.Itp-eBanking:microservices:pipeline-service [build]" />
       </list>
     </recent_temporary>
   </component>
@@ -378,7 +609,21 @@
       <workItem from="1772033902152" duration="12962000" />
       <workItem from="1772068546850" duration="13020000" />
       <workItem from="1772121131210" duration="2635000" />
-      <workItem from="1772130865223" duration="589000" />
+      <workItem from="1772130865223" duration="1311000" />
+      <workItem from="1772158743754" duration="1040000" />
+      <workItem from="1772413856786" duration="8050000" />
+      <workItem from="1772501820910" duration="7545000" />
+      <workItem from="1772534469101" duration="10044000" />
+      <workItem from="1772560304718" duration="3487000" />
+      <workItem from="1772587801892" duration="12644000" />
+      <workItem from="1772649952214" duration="120000" />
+      <workItem from="1772674700925" duration="7230000" />
+      <workItem from="1772692758146" duration="6584000" />
+      <workItem from="1772710129332" duration="588000" />
+      <workItem from="1772710762770" duration="2861000" />
+      <workItem from="1772726587550" duration="10694000" />
+      <workItem from="1772759649396" duration="7802000" />
+      <workItem from="1772769462799" duration="1465000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <option name="closed" value="true" />
@@ -420,19 +665,85 @@
       <option name="project" value="LOCAL" />
       <updated>1772047140971</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Implement snapshot mechanism for CustomerAggregate and add AxonConfig">
+      <option name="closed" value="true" />
+      <created>1772131762572</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1772131762572</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Enhance CustomerService with customer history retrieval, pagination attributes, and initialize customer segments during startup.">
+      <option name="closed" value="true" />
+      <created>1772131811064</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1772131811064</updated>
+    </task>
+    <task id="LOCAL-00008" summary=".">
+      <option name="closed" value="true" />
+      <created>1772131827929</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1772131827929</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Add dead letter queue processing and configuration for customer events">
+      <option name="closed" value="true" />
+      <created>1772542192939</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1772542192939</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Add dead letter queue processing and configuration for customer events">
+      <option name="closed" value="true" />
+      <created>1772542634323</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1772542634323</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Expose endpoint to account service for validate customer">
+      <option name="closed" value="true" />
+      <created>1772590828301</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1772590828301</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="." />
     <MESSAGE value="Implement CQRS and EventSourcing in CustomerService" />
     <MESSAGE value="Implement read database" />
     <MESSAGE value="integrate phone number update logic in `CustomerListener`" />
     <MESSAGE value="Implement CQRS read-side for CustomerService with pagination" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implement CQRS read-side for CustomerService with pagination" />
+    <MESSAGE value="Implement snapshot mechanism for CustomerAggregate and add AxonConfig" />
+    <MESSAGE value="Enhance CustomerService with customer history retrieval, pagination attributes, and initialize customer segments during startup." />
+    <MESSAGE value="." />
+    <MESSAGE value="Add dead letter queue processing and configuration for customer events" />
+    <MESSAGE value="Expose endpoint to account service for validate customer" />
+    <option name="LAST_COMMIT_MESSAGE" value="Expose endpoint to account service for validate customer" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="co.istad.makara.common.application.exception.ApplicationException" package="co.istad.makara.common.application.exception" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

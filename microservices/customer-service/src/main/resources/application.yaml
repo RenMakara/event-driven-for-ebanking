@@ -12,7 +12,7 @@ server:
   port: 20261
 spring:
   application:
-    name: customer
+    name: CUSTOMER
   datasource:
     url: jdbc:postgresql://localhost:16851/db_customer
     driver-class-name: org.postgresql.Driver

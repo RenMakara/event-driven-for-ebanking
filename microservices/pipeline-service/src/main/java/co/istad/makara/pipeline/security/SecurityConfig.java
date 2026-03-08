@@ -18,7 +18,7 @@ public class SecurityConfig {
         http.authorizeHttpRequests(authorizeRequests -> authorizeRequests
                 .anyRequest().permitAll());
         http.httpBasic(AbstractHttpConfigurer::disable);
-        http.oauth2ResourceServer(oaut2 -> oaut2
+        http.oauth2ResourceServer(oauth2 -> oauth2
                 .jwt(Customizer.withDefaults()));
 
         return http.build();

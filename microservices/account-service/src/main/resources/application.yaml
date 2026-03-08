@@ -1,8 +1,25 @@
+axon:
+  axonserver:
+    enabled: false
+
 server:
   port: 20260
 spring:
   application:
-    name: account
+    name: ACCOUNT
+
+  datasource:
+    url: jdbc:postgresql://localhost:16851/db_account
+    driver-class-name: org.postgresql.Driver
+    username: itpusr
+    password: itp@168
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: false
   profiles:
     active: dev
   config:

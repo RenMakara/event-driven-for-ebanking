@@ -1,16 +1,12 @@
 package co.istad.makara.common.domain.valueobject;
 
-import lombok.Getter;
+import lombok.NonNull;
 
 import java.util.UUID;
 
-@Getter
-public class CustomerId {
-    private final UUID value;
-    public CustomerId(UUID value) {
-        this.value = value;
-    }
+public record CustomerId(UUID value) {
 
+    @NonNull
     @Override
     public String toString() {
         return value.toString();
