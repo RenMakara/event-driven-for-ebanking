@@ -1,12 +1,11 @@
 package co.istad.makara.account.domain.command;
 
-import co.istad.makara.account.domain.valueobject.AccountStatus;
-import co.istad.makara.account.domain.valueobject.AccountTypeCode;
+import co.istad.makara.common.domain.valueobject.AccountStatus;
+import co.istad.makara.common.domain.valueobject.AccountTypeCode;
 import co.istad.makara.common.domain.valueobject.AccountId;
 import co.istad.makara.common.domain.valueobject.BranchId;
 import co.istad.makara.common.domain.valueobject.CustomerId;
 import co.istad.makara.common.domain.valueobject.Money;
-import org.axonframework.modelling.command.AggregateIdentifier;
 import org.axonframework.modelling.command.TargetAggregateIdentifier;
 
 

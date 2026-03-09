@@ -1,4 +1,4 @@
-package co.istad.makara.account.domain.valueobject;
+package co.istad.makara.common.domain.valueobject;
 
 public enum AccountTypeCode{
     SAVINGS,

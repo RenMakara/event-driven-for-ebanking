@@ -1,7 +1,7 @@
 package co.istad.makara.account.domain.event;
 
-import co.istad.makara.account.domain.valueobject.AccountStatus;
-import co.istad.makara.account.domain.valueobject.AccountTypeCode;
+import co.istad.makara.common.domain.valueobject.AccountStatus;
+import co.istad.makara.common.domain.valueobject.AccountTypeCode;
 import co.istad.makara.common.domain.valueobject.AccountId;
 import co.istad.makara.common.domain.valueobject.BranchId;
 import co.istad.makara.common.domain.valueobject.CustomerId;

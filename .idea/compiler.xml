@@ -10,6 +10,7 @@
         <module name="Itp-eBanking.spring-cloud.iam-service.main" />
         <module name="Itp-eBanking.microservices.pipeline-service.main" />
         <module name="Itp-eBanking.common.main" />
+        <module name="Itp-eBanking.microservices.account-query-service.main" />
         <module name="Itp-eBanking.spring-cloud.front-bff.main" />
         <module name="Itp-eBanking.spring-cloud.gateway-server.main" />
       </profile>
@@ -38,6 +39,9 @@
       <module name="Itp-eBanking.common" options="-parameters" />
       <module name="Itp-eBanking.common.main" options="-parameters" />
       <module name="Itp-eBanking.common.test" options="-parameters" />
+      <module name="Itp-eBanking.microservices.account-query-service" options="-parameters" />
+      <module name="Itp-eBanking.microservices.account-query-service.main" options="-parameters" />
+      <module name="Itp-eBanking.microservices.account-query-service.test" options="-parameters" />
       <module name="Itp-eBanking.microservices.account-service" options="-parameters" />
       <module name="Itp-eBanking.microservices.account-service.main" options="-parameters" />
       <module name="Itp-eBanking.microservices.account-service.test" options="-parameters" />

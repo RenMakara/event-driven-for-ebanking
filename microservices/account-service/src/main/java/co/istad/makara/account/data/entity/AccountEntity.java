@@ -1,7 +1,7 @@
 package co.istad.makara.account.data.entity;
 
-import co.istad.makara.account.domain.valueobject.AccountStatus;
-import co.istad.makara.account.domain.valueobject.AccountTypeCode;
+import co.istad.makara.common.domain.valueobject.AccountStatus;
+import co.istad.makara.common.domain.valueobject.AccountTypeCode;
 import co.istad.makara.common.domain.valueobject.Money;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -9,7 +9,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.ZonedDateTime;
-import java.util.List;
 import java.util.UUID;
 
 @Getter

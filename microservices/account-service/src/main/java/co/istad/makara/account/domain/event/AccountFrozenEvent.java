@@ -1,6 +1,6 @@
 package co.istad.makara.account.domain.event;
 
-import co.istad.makara.account.domain.valueobject.AccountStatus;
+import co.istad.makara.common.domain.valueobject.AccountStatus;
 import co.istad.makara.common.domain.valueobject.AccountId;
 import co.istad.makara.common.domain.valueobject.CustomerId;
 import lombok.Builder;

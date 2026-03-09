@@ -2,7 +2,7 @@ package co.istad.makara.account.data.init;
 
 import co.istad.makara.account.data.entity.AccountTypeEntity;
 import co.istad.makara.account.data.repository.AccountTypeRepository;
-import co.istad.makara.account.domain.valueobject.AccountTypeCode;
+import co.istad.makara.common.domain.valueobject.AccountTypeCode;
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
