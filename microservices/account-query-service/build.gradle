@@ -30,25 +30,24 @@ ext {
 
 dependencies {
 
+
     implementation project(":common")
     // Axon framework
     implementation 'org.axonframework:axon-spring-boot-starter:4.13.0'
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
-	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-	implementation 'org.springframework.boot:spring-boot-starter-data-r2dbc'
-	implementation 'org.springframework.boot:spring-boot-starter-liquibase'
-	implementation 'org.springframework.boot:spring-boot-starter-webflux'
-	implementation 'org.springframework.cloud:spring-cloud-starter-config'
-	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+    implementation 'org.springframework.boot:spring-boot-starter-data-r2dbc'
+    implementation 'org.springframework.boot:spring-boot-starter-liquibase'
+    implementation 'org.springframework.boot:spring-boot-starter-webflux'
+    implementation 'org.springframework.cloud:spring-cloud-starter-config'
+    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
     runtimeOnly 'org.postgresql:postgresql'
     runtimeOnly 'org.postgresql:r2dbc-postgresql'
-	compileOnly 'org.projectlombok:lombok'
-	annotationProcessor 'org.projectlombok:lombok'
-	testImplementation 'org.springframework.boot:spring-boot-starter-data-jpa-test'
-	testImplementation 'org.springframework.boot:spring-boot-starter-data-r2dbc-test'
-	testImplementation 'org.springframework.boot:spring-boot-starter-liquibase-test'
-	testImplementation 'org.springframework.boot:spring-boot-starter-webflux-test'
-	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+    testImplementation 'org.springframework.boot:spring-boot-starter-data-r2dbc-test'
+    testImplementation 'org.springframework.boot:spring-boot-starter-liquibase-test'
+    testImplementation 'org.springframework.boot:spring-boot-starter-webflux-test'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
 dependencyManagement {

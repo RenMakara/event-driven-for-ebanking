@@ -4,39 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="57d9cd75-d56e-4c50-96fa-2c994cb9b129" name="Changes" comment="Add db_account_query database creation to initialization script">
-      <change afterPath="$PROJECT_DIR$/microservices/account-query-service/src/main/java/co/makara/istad/account/query/data/entity/AccountEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/account-query-service/src/main/java/co/makara/istad/account/query/data/entity/AccountTypeEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/account-query-service/src/main/resources/db/changelog/data/09-01-changelog.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/account-query-service/src/main/resources/db/changelog/db.changelog-master.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/account-query-service/src/main/resources/db/changelog/ddl/09-01-changelog.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/account-query-service/src/main/resources/db/changelog/ddl/09-02-changelog.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/9.2.1/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.2.1/checksums/checksums.lock" afterDir="false" />
+    <list default="true" id="57d9cd75-d56e-4c50-96fa-2c994cb9b129" name="Changes" comment="Initialize Account Query Service with essential configurations and database setup using Liquibase">
+      <change afterPath="$PROJECT_DIR$/microservices/account-query-service/src/main/resources/db/changelog/data/changelog-0001-provider.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservices/account-query-service/src/main/resources/db/changelog/ddl/changelog-0003.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservices/account-query-service/src/main/resources/db/changelog/ddl/changelog-0004.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservices/account-query-service/src/main/resources/db/changelog/ddl/changelog-0005.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/9.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.2.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/9.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.2.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/9.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.2.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/9.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.2.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/9.2.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.2.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/problems/problems-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/problems/problems-report.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/application/AccountServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/application/AccountServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/application/dto/create/CreateAccountRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/application/dto/create/CreateAccountRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/data/entity/AccountEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/data/entity/AccountEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/data/entity/AccountTypeEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/data/entity/AccountTypeEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/data/init/InitAccountType.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/data/init/InitAccountType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/data/repository/AccountTypeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/data/repository/AccountTypeRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/domain/aggregate/AccountAggregate.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/domain/aggregate/AccountAggregate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/domain/command/CreateAccountCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/domain/command/CreateAccountCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/domain/event/AccountCreatedEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/domain/event/AccountCreatedEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/domain/event/AccountFrozenEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/domain/event/AccountFrozenEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/domain/valueobject/AccountStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/co/istad/makara/common/domain/valueobject/AccountStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices/account-service/src/main/java/co/istad/makara/account/domain/valueobject/AccountTypeCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/co/istad/makara/common/domain/valueobject/AccountTypeCode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/account-query-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/account-query-service/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/account-query-service/src/main/java/co/makara/istad/account/query/data/entity/AccountEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/account-query-service/src/main/java/co/makara/istad/account/query/data/entity/AccountEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/account-query-service/src/main/java/co/makara/istad/account/query/data/entity/AccountTypeEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/account-query-service/src/main/java/co/makara/istad/account/query/data/entity/AccountTypeEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/account-query-service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/account-query-service/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/account-query-service/src/main/resources/db/changelog/data/09-01-changelog.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/account-query-service/src/main/resources/db/changelog/ddl/09-01-changelog.sql" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/account-query-service/src/main/resources/db/changelog/ddl/changelog-0001.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/account-query-service/src/main/resources/db/changelog/ddl/09-02-changelog.sql" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/account-query-service/src/main/resources/db/changelog/ddl/changelog-0002.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -228,8 +215,12 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
+  &quot;history&quot;: [
+    {
+      &quot;assignee&quot;: &quot;RenMakara&quot;
+    }
+  ],
   &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
     &quot;assignee&quot;: &quot;RenMakara&quot;
   }
 }</component>
@@ -287,7 +278,7 @@
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/ITP-CSTAD/Itp-eBanking/microservices/account-query-service/src/main/java/co/makara/istad/account/query/data/entity",
+    "last_opened_file_path": "D:/ITP-CSTAD/Itp-eBanking/microservices/account-query-service/src/main/resources/db/changelog/ddl",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -297,6 +288,7 @@
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "run.configurations.included.in.services": "true",
+    "service.view.auto.scroll.to.source": "true",
     "settings.editor.selected.configurable": "configurable.group.appearance",
     "vue.rearranger.settings.migration": "true"
   },
@@ -311,11 +303,11 @@
       <recent name="co.istad.makara.account.rest" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\ITP-CSTAD\Itp-eBanking\microservices\account-query-service\src\main\resources\db\changelog\ddl" />
+      <recent name="D:\ITP-CSTAD\Itp-eBanking\microservices\account-query-service\src\main\resources\db\changelog\data" />
       <recent name="D:\ITP-CSTAD\Itp-eBanking\microservices\account-query-service\src\main\java\co\makara\istad\account\query\data\entity" />
       <recent name="D:\ITP-CSTAD\Itp-eBanking\microservices\account-service\src\main\java\co\istad\makara\account\data\entity" />
       <recent name="D:\ITP-CSTAD\Itp-eBanking\common\src\main\java\co\istad\makara\common\data" />
-      <recent name="D:\ITP-CSTAD\Itp-eBanking\microservices\customer-service\src\main\java\co\istad\makara\customer\application\config" />
-      <recent name="D:\ITP-CSTAD\Itp-eBanking\microservices\customer-service\src\main\java\co\istad\makara\customer\data\entity" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="co.istad.makara.customer.application" />
@@ -335,7 +327,7 @@
         <entry key="SpringBootApplicationConfigurationType">
           <value>
             <map>
-              <entry key="AccountQueryServiceApplication" value="STOPPED" />
+              <entry key="AccountQueryServiceApplication" value="FAILED" />
               <entry key="AccountServiceApplication" value="STOPPED" />
               <entry key="CustomerServiceApplication" value="STOPPED" />
               <entry key="EurekaserverApplication" value="STOPPED" />
@@ -347,7 +339,7 @@
       </map>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.AccountServiceApplication">
+  <component name="RunManager" selected="Spring Boot.AccountQueryServiceApplication">
     <configuration name="Itp-eBanking:microservices [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -592,7 +584,9 @@
       <workItem from="1772952251271" duration="10493000" />
       <workItem from="1772982601860" duration="10179000" />
       <workItem from="1773026083296" duration="5492000" />
-      <workItem from="1773032516454" duration="1973000" />
+      <workItem from="1773032516454" duration="2555000" />
+      <workItem from="1773106360824" duration="3790000" />
+      <workItem from="1773160847474" duration="6072000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <option name="closed" value="true" />
@@ -714,7 +708,15 @@
       <option name="project" value="LOCAL" />
       <updated>1773027899080</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Initialize Account Query Service with essential configurations and database setup using Liquibase">
+      <option name="closed" value="true" />
+      <created>1773034629211</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1773034629211</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -734,7 +736,9 @@
     <MESSAGE value="Deposit amount Implemented" />
     <MESSAGE value="Deposit, Withdrawal, and FreezeAccount implement" />
     <MESSAGE value="Add db_account_query database creation to initialization script" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add db_account_query database creation to initialization script" />
+    <MESSAGE value="Add account query service with database schema and initialization scripts" />
+    <MESSAGE value="Initialize Account Query Service with essential configurations and database setup using Liquibase" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initialize Account Query Service with essential configurations and database setup using Liquibase" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
