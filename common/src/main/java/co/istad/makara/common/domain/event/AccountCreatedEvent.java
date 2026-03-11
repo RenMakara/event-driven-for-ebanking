@@ -1,4 +1,4 @@
-package co.istad.makara.account.domain.event;
+package co.istad.makara.common.domain.event;
 
 import co.istad.makara.common.domain.valueobject.AccountStatus;
 import co.istad.makara.common.domain.valueobject.AccountTypeCode;
