@@ -4,7 +4,7 @@ import co.istad.makara.account.domain.command.CreateAccountCommand;
 import co.istad.makara.account.domain.command.DepositMoneyCommand;
 import co.istad.makara.account.domain.command.FreezeAccountCommand;
 import co.istad.makara.account.domain.command.WithdrawMoneyCommand;
-import co.istad.makara.account.domain.event.AccountCreatedEvent;
+import co.istad.makara.common.domain.event.AccountCreatedEvent;
 import co.istad.makara.account.domain.event.AccountFrozenEvent;
 import co.istad.makara.account.domain.event.MoneyDepositedEvent;
 import co.istad.makara.account.domain.event.MoneyWithdrawnEvent;
