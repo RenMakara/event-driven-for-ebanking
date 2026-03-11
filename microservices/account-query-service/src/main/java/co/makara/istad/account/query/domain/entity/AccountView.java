@@ -1,41 +1,31 @@
-package co.makara.istad.account.query.data.entity;
+package co.makara.istad.account.query.domain.entity;
 
 import co.istad.makara.common.domain.valueobject.AccountStatus;
 import co.istad.makara.common.domain.valueobject.AccountTypeCode;
-import co.istad.makara.common.domain.valueobject.Currency;
 import co.istad.makara.common.domain.valueobject.Money;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.relational.core.mapping.Table;
 
-import java.math.BigDecimal;
 import java.time.ZonedDateTime;
 import java.util.UUID;
-
 @Getter
 @Setter
 @NoArgsConstructor
-@Table(name = "accounts")
-public class AccountEntity {
-
-    @Id
+public class AccountView {
     private UUID accountId;
 
     private UUID customerId;
 
     private UUID branchId;
 
-    private UUID accountTypeId;
+    private AccountTypeCode accountTypeCode;
 
     private String accountNumber;
 
     private String accountHolder;
 
-    private BigDecimal balance;
-
-    private Currency currency;
+    private Money money;
 
     private AccountStatus accountStatus;
 
@@ -46,5 +36,4 @@ public class AccountEntity {
     private ZonedDateTime createdAt;
 
     private ZonedDateTime updatedAt;
-
 }

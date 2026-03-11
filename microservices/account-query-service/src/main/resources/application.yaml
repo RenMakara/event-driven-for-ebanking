@@ -1,6 +1,16 @@
 axon:
   axonserver:
     enabled: false
+  kafka:
+    bootstrap-servers: localhost:29092,localhost:29094,localhost:29096
+    default-topic: Axon.AccountCQRS.Events
+    client-id: kafka-axon-account
+
+    message-converter-mode: default # alternative is cloud_event <https://cloudevents.io/>
+    properties:
+      security.protocol: PLAINTEXT # PLAINTEXT for no security purpose
+    consumer:
+      event-processor-mode: pooled_streaming
   serializer:
     general: jackson
     events: jackson
@@ -15,6 +25,7 @@ spring:
 # Liquibase configuration  ----------
   liquibase:
     enabled: true
+    driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://localhost:16851/db_account_query
     user: itpusr
     password: itp@168

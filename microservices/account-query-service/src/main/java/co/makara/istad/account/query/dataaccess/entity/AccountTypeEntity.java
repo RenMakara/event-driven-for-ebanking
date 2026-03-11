@@ -1,4 +1,4 @@
-package co.makara.istad.account.query.data.entity;
+package co.makara.istad.account.query.dataaccess.entity;
 
 import co.istad.makara.common.domain.valueobject.AccountTypeCode;
 import lombok.Getter;
