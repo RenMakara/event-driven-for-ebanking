@@ -83,6 +83,9 @@
       <module name="customer-service" options="-parameters" />
       <module name="customer-service.main" options="-parameters" />
       <module name="customer-service.test" options="-parameters" />
+      <module name="event-driven-for-ebanking.account-command-service" options="-parameters" />
+      <module name="event-driven-for-ebanking.account-command-service.main" options="-parameters" />
+      <module name="event-driven-for-ebanking.account-command-service.test" options="-parameters" />
       <module name="event-driven-for-ebanking.common" options="-parameters" />
       <module name="event-driven-for-ebanking.common.main" options="-parameters" />
       <module name="event-driven-for-ebanking.common.test" options="-parameters" />
