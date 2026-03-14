@@ -1,8 +1,9 @@
-package co.istad.makara.account.domain.handler.interceptors;
+package co.istad.makara.account.domain.handler;
 
 
 import co.istad.makara.account.domain.command.CreateAccountCommand;
-import co.istad.makara.account.config.external.CustomerClient;
+import co.istad.makara.account.client.adapter.CustomerClientImpl;
+import co.istad.makara.account.domain.exception.AccountDomainException;
 import co.istad.makara.common.domain.valueobject.CustomerId;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -18,7 +19,7 @@ import java.util.function.BiFunction;
 @Slf4j
 public class AccountCreationDispatchInterceptor implements MessageDispatchInterceptor<CommandMessage<?>> {
 
-    private final CustomerClient customerClient;
+    private final CustomerClientImpl customerClient;
 
     @Override
     public BiFunction<Integer, CommandMessage<?>, CommandMessage<?>> handle(List<? extends CommandMessage<?>> messages) {
@@ -33,12 +34,12 @@ public class AccountCreationDispatchInterceptor implements MessageDispatchInterc
 
                 log.info("Interceptor: Checking Customer ID: {} ...", customerId);
 
-                try {
-                    // 3. call WebClient to check
-                    customerClient.validateCustomer(customerId);
-                    log.info("Interceptor: Customer {} : ", customerId);
-                } catch (Exception e) {
-                    throw new IllegalArgumentException("Validation Failed : " + e.getMessage());
+                try{
+                    customerClient.getCustomer(customerId);
+                    log.info("😍😍 Interceptor: Customer ID: {} found", customerId);
+                }catch (AccountDomainException e){
+                    log.error("Interceptor: Customer ID: {} not found", customerId);
+                    throw new AccountDomainException("⚠️😭 Customer not found");
                 }
             }
             return command;

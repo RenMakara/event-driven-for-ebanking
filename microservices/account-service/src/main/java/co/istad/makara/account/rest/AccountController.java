@@ -1,13 +1,11 @@
 package co.istad.makara.account.rest;
 
-import co.istad.makara.account.application.AccountService;
+import co.istad.makara.account.application.ports.input.service.AccountService;
 import co.istad.makara.account.application.dto.create.*;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/accounts")

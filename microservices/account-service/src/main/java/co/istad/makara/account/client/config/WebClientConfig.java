@@ -1,4 +1,4 @@
-package co.istad.makara.account.config;
+package co.istad.makara.account.client.config;
 
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
