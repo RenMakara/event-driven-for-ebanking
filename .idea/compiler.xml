@@ -7,12 +7,11 @@
         <processorPath useClasspath="false">
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.42/8365263844ebb62398e0dc33057ba10ba472d3b8/lombok-1.18.42.jar" />
         </processorPath>
-        <module name="Itp-eBanking.spring-cloud.iam-service.main" />
-        <module name="Itp-eBanking.microservices.pipeline-service.main" />
-        <module name="Itp-eBanking.common.main" />
-        <module name="Itp-eBanking.microservices.account-query-service.main" />
-        <module name="Itp-eBanking.spring-cloud.front-bff.main" />
-        <module name="Itp-eBanking.spring-cloud.gateway-server.main" />
+        <module name="event-driven-for-ebanking.spring-cloud.front-bff.main" />
+        <module name="event-driven-for-ebanking.spring-cloud.gateway-server.main" />
+        <module name="event-driven-for-ebanking.common.main" />
+        <module name="event-driven-for-ebanking.spring-cloud.iam-service.main" />
+        <module name="event-driven-for-ebanking.microservices.pipeline-service.main" />
       </profile>
       <profile name="Gradle Imported" enabled="true">
         <outputRelativeToContentRoot value="true" />
@@ -21,8 +20,17 @@
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.42/8365263844ebb62398e0dc33057ba10ba472d3b8/lombok-1.18.42.jar" />
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok-mapstruct-binding/0.2.0/2f1cf9ced7b720ba4996c942b816669e63f0fa4f/lombok-mapstruct-binding-0.2.0.jar" />
         </processorPath>
-        <module name="Itp-eBanking.microservices.account-service.main" />
-        <module name="Itp-eBanking.microservices.customer-service.main" />
+        <module name="event-driven-for-ebanking.microservices.account-service.main" />
+        <module name="event-driven-for-ebanking.microservices.customer-service.main" />
+      </profile>
+      <profile name="Gradle Imported" enabled="true">
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.42/8365263844ebb62398e0dc33057ba10ba472d3b8/lombok-1.18.42.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mapstruct/mapstruct-processor/1.6.3/52e345c907fbf173b376586c7f8b131d53fa5867/mapstruct-processor-1.6.3.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok-mapstruct-binding/0.2.0/2f1cf9ced7b720ba4996c942b816669e63f0fa4f/lombok-mapstruct-binding-0.2.0.jar" />
+        </processorPath>
+        <module name="event-driven-for-ebanking.microservices.account-query-service.main" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="21">
@@ -75,6 +83,39 @@
       <module name="customer-service" options="-parameters" />
       <module name="customer-service.main" options="-parameters" />
       <module name="customer-service.test" options="-parameters" />
+      <module name="event-driven-for-ebanking.common" options="-parameters" />
+      <module name="event-driven-for-ebanking.common.main" options="-parameters" />
+      <module name="event-driven-for-ebanking.common.test" options="-parameters" />
+      <module name="event-driven-for-ebanking.microservices.account-query-service" options="-parameters" />
+      <module name="event-driven-for-ebanking.microservices.account-query-service.main" options="-parameters" />
+      <module name="event-driven-for-ebanking.microservices.account-query-service.test" options="-parameters" />
+      <module name="event-driven-for-ebanking.microservices.account-service" options="-parameters" />
+      <module name="event-driven-for-ebanking.microservices.account-service.main" options="-parameters" />
+      <module name="event-driven-for-ebanking.microservices.account-service.test" options="-parameters" />
+      <module name="event-driven-for-ebanking.microservices.customer-service" options="-parameters" />
+      <module name="event-driven-for-ebanking.microservices.customer-service.main" options="-parameters" />
+      <module name="event-driven-for-ebanking.microservices.customer-service.test" options="-parameters" />
+      <module name="event-driven-for-ebanking.microservices.pipeline-service" options="-parameters" />
+      <module name="event-driven-for-ebanking.microservices.pipeline-service.main" options="-parameters" />
+      <module name="event-driven-for-ebanking.microservices.pipeline-service.test" options="-parameters" />
+      <module name="event-driven-for-ebanking.spring-cloud.admin-bff" options="-parameters" />
+      <module name="event-driven-for-ebanking.spring-cloud.admin-bff.main" options="-parameters" />
+      <module name="event-driven-for-ebanking.spring-cloud.admin-bff.test" options="-parameters" />
+      <module name="event-driven-for-ebanking.spring-cloud.eurekaserver" options="-parameters" />
+      <module name="event-driven-for-ebanking.spring-cloud.eurekaserver.main" options="-parameters" />
+      <module name="event-driven-for-ebanking.spring-cloud.eurekaserver.test" options="-parameters" />
+      <module name="event-driven-for-ebanking.spring-cloud.front-bff" options="-parameters" />
+      <module name="event-driven-for-ebanking.spring-cloud.front-bff.main" options="-parameters" />
+      <module name="event-driven-for-ebanking.spring-cloud.front-bff.test" options="-parameters" />
+      <module name="event-driven-for-ebanking.spring-cloud.gateway-server" options="-parameters" />
+      <module name="event-driven-for-ebanking.spring-cloud.gateway-server.main" options="-parameters" />
+      <module name="event-driven-for-ebanking.spring-cloud.gateway-server.test" options="-parameters" />
+      <module name="event-driven-for-ebanking.spring-cloud.iam-service" options="-parameters" />
+      <module name="event-driven-for-ebanking.spring-cloud.iam-service.main" options="-parameters" />
+      <module name="event-driven-for-ebanking.spring-cloud.iam-service.test" options="-parameters" />
+      <module name="event-driven-for-ebanking.spring-cloud.itp-configserver" options="-parameters" />
+      <module name="event-driven-for-ebanking.spring-cloud.itp-configserver.main" options="-parameters" />
+      <module name="event-driven-for-ebanking.spring-cloud.itp-configserver.test" options="-parameters" />
       <module name="itp-ebanking.microservices.account-service" options="-parameters" />
       <module name="itp-ebanking.microservices.account-service.main" options="-parameters" />
       <module name="itp-ebanking.microservices.account-service.test" options="-parameters" />
