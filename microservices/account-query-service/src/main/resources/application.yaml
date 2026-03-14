@@ -29,7 +29,17 @@ spring:
     url: jdbc:postgresql://localhost:16851/db_account_query
     user: itpusr
     password: itp@168
+# Jpa configuration ------------------
+  datasource:
+    url: jdbc:postgresql://localhost:16851/db_account_query
+    driver-class-name: org.postgresql.Driver
+    username: itpusr
+    password: itp@168
+  jpa:
+    hibernate:
+      ddl-auto: none
 
+  # R2DBC configuration
   r2dbc:
     url: r2dbc:postgresql://localhost:16851/db_account_query
     username: itpusr
