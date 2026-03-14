@@ -1,7 +1,7 @@
-package co.istad.makara.account.data.repository;
+package co.makara.istad.account.query.dataaccess.repository;
 
-import co.istad.makara.account.data.entity.AccountTypeEntity;
 import co.istad.makara.common.domain.valueobject.AccountTypeCode;
+import co.makara.istad.account.query.dataaccess.entity.AccountTypeEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
